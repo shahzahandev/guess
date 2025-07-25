@@ -36,9 +36,9 @@ let chanceNumber = 5;
 mainBtn.addEventListener("click", () => {
      if (mainInput.value === "") {
           mainErr.innerHTML = "Please Enter your name";
-          mainErr.style.marginTop = "-60px";
-          mainErr.style.marginBottom = "40px";
-          mainErr.style.marginLeft = "-320px";
+          mainErr.style.marginTop = "-30px";
+          mainErr.style.marginBottom = "10px";
+          mainErr.style.marginLeft = "10px";
           mainErr.style.color = "red";
           mainErr.style.fontSize = "18px";
           mainInput.style.border = "2px solid red";
@@ -57,9 +57,9 @@ mainBtn.addEventListener("click", () => {
 playerOneBtn.addEventListener("click", () => {
      if (playerOneInput.value == "") {
           playerOneErr.innerHTML = "Please Enter a number here";
-          playerOneErr.style.marginTop = "-65px";
-          playerOneErr.style.marginBottom = "40px";
-          playerOneErr.style.marginLeft = "-300px";
+          playerOneErr.style.marginTop = "-30px";
+          playerOneErr.style.marginBottom = "10px";
+          playerOneErr.style.marginLeft = "10px";
           playerOneErr.style.color = "red";
           playerOneErr.style.fontSize = "18px";
           playerOneInput.style.border = "2px solid red";
@@ -75,9 +75,9 @@ playerTwoBtn.addEventListener("click", () => {
 
      if (playerTwoInput.value == "") {
           playerTwoErr.innerHTML = "Please Enter a number here";
-          playerTwoErr.style.marginTop = "-65px";
-          playerTwoErr.style.marginBottom = "40px";
-          playerTwoErr.style.marginLeft = "-300px";
+          playerTwoErr.style.marginTop = "-30px";
+          playerTwoErr.style.marginBottom = "10px";
+          playerTwoErr.style.marginLeft = "10px";
           playerTwoErr.style.color = "red";
           playerTwoErr.style.fontSize = "18px";
           playerTwoInput.style.border = "2px solid red";
