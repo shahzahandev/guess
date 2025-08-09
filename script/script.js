@@ -1,116 +1,86 @@
+// main content 
 let contentMain = document.querySelector(".content-main");
-let playerOne = document.querySelector(".player-One");
-let playerTwo = document.querySelector(".player-Two");
-// console.log(contentMain, playerOne, playerTwo);
-
-
 let mainHeading = document.querySelector(".main-heading");
 let mainInput = document.querySelector(".main-input");
 let mainBtn = document.querySelector(".main-btn");
 let mainErr = document.querySelector(".main-Err");
-// console.log(mainHeading, mainInput, mainBtn);
 
-
-let playerOneHeading = document.querySelector(".playerOne-heading");
+// player one button
+let playerOne = document.querySelector(".player-One");
 let playerOneInput = document.querySelector(".playerOne-input");
 let playerOneBtn = document.querySelector(".playerOne-btn");
 let playerOneName = document.querySelector(".playerOne-name");
 let playerOneErr = document.querySelector(".playerOne-Err");
-// console.log(playerOneHeading, playerOneInput, playerOneBtn, playerOneName);
 
-
+// player Two button
+let playerTwo = document.querySelector(".player-Two");
 let playerTwoHeading = document.querySelector(".playerTwo-heading");
 let playerTwoInput = document.querySelector(".playerTwo-input");
 let playerTwoBtn = document.querySelector(".playerTwo-btn");
 let playerTwoErr = document.querySelector(".playerTwo-Err");
-// console.log(playerTwoHeading, playerTwoInput, playerTwoBtn);
-
-let display = document.querySelector(".display");
-let displayHeading = document.querySelector(".display-heading");
-
 let chance = document.querySelector(".chance");
-let displayBtn = document.querySelector(".display-btn");
 let chanceNumber = 5;
 
+// game over display activity
+let display = document.querySelector(".display");
+let displayHeading = document.querySelector(".display-heading");
+let displayBtn = document.querySelector(".display-btn");
 
+
+// start button activity
 mainBtn.addEventListener("click", () => {
-     if (mainInput.value === "") {
-          mainErr.innerHTML = "Please Enter your name";
-          mainErr.style.marginTop = "-30px";
-          mainErr.style.marginBottom = "10px";
-          mainErr.style.marginLeft = "10px";
-          mainErr.style.color = "red";
-          mainErr.style.fontSize = "18px";
+     if (mainInput.value == "") {
+          mainErr.innerHTML = "Enter your name fast.";
           mainInput.style.border = "2px solid red";
      } else {
-          playerOne.style.display = "block";
-          contentMain.style.display = "none";
+          contentMain.style.display = 'none';
+          playerOne.style.display = "block"
           playerOneName.innerHTML = mainInput.value;
-          playerOneName.style.color = "#1904f6";
-          playerOneName.style.textTransform = "capitalize";
-          playerOneName.style.fontWeight = "700";
-          console.log("Player One is", mainInput.value);
+          playerOneName.style.textTransform = "capitalaize"
      }
+});
 
-})
-
+// player one button activity
 playerOneBtn.addEventListener("click", () => {
      if (playerOneInput.value == "") {
-          playerOneErr.innerHTML = "Please Enter a number here";
-          playerOneErr.style.marginTop = "-30px";
-          playerOneErr.style.marginBottom = "10px";
-          playerOneErr.style.marginLeft = "10px";
-          playerOneErr.style.color = "red";
-          playerOneErr.style.fontSize = "18px";
+          playerOneErr.innerHTML = "Enter a number fast."
           playerOneInput.style.border = "2px solid red";
      } else {
-          playerTwo.style.display = "block";
           playerOne.style.display = "none";
-          console.log("Player One", mainInput.value, "Choose:",  playerOneInput.value);
-          
+          playerTwo.style.display = "block"
      }
 })
-playerTwoBtn.addEventListener("click", () => {
-  
 
+// player two button activity
+playerTwoBtn.addEventListener("click", () => {
      if (playerTwoInput.value == "") {
-          playerTwoErr.innerHTML = "Please Enter a number here";
-          playerTwoErr.style.marginTop = "-30px";
-          playerTwoErr.style.marginBottom = "10px";
-          playerTwoErr.style.marginLeft = "10px";
-          playerTwoErr.style.color = "red";
-          playerTwoErr.style.fontSize = "18px";
+          playerTwoErr.innerHTML = "Enter a number fast.";
           playerTwoInput.style.border = "2px solid red";
-     } else if (playerTwoInput.value === playerOneInput.value) {
-          displayHeading.innerHTML = "congratulation, The winner is player Two";
+     } else if (playerOneInput.value === playerTwoInput.value) {
+          playerTwo.style.display = "none";
           display.style.display = "block";
-          playerTwo.style.display = "none";    
-          displayHeading.style.color = "#1904f6"; 
+          displayHeading.innerHTML = 'Congratulation, Player Two is WIN.';
      } else {
           chanceNumber--
+          chance.style.color = 'red';
           chance.innerHTML = chanceNumber;
-          chance.style.color = "red";
-          chance.style.fontWeight = "700";
-          if(chanceNumber == 0){
-          display.style.display = "block";
-          playerTwo.style.display = "none";
-          playerOneInput.value = "";
-          playerTwoInput.value = "";
-          chance.innerHTML = ""
-          displayHeading.innerText ="congratulation " + playerOneName.innerText + ", you win the game";
-          displayHeading.style.color = "#1904f6";
+
+          if (chanceNumber == 0) {
+               playerTwo.style.display = "none";
+               display.style.display = "block";
+               displayHeading.innerHTML = 'Player One is WIN.';
           }
-     
-     }    
+     }
 })
 
+// play again button activity
 displayBtn.addEventListener("click", () => {
      display.style.display = "none";
      contentMain.style.display = "block";
      mainInput.value = "";
-     playerOneErr.innerHTML = "";
-     playerTwoErr.innerHTML = "";
+     playerOneInput.value = "";
+     playerTwoInput.value = "";
+     chanceNumber = 5;
+     chanceNumber--
+     chance.innerHTML = chanceNumber
 })
-
-
-

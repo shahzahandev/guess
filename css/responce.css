@@ -84,11 +84,13 @@
     background: #ef09cc;
 }
 
-
+   .game-heading{
+    font-size: 18px;
+   }
     .heading{
     font-family: var(--fontPop);
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
     color: #000000;
     line-height: auto;
     letter-spacing: 0;
@@ -100,7 +102,7 @@
     .input{
     font-family: var(--fontPop);
     font-weight: bold;
-    font-size: 12px;
+    font-size: 10px;
     color: #000000;
     line-height: auto;
     background: #ffffff80;
@@ -112,7 +114,6 @@
     width: 250px;
 }
 .btn{
-    margin-bottom: 50px;
     font-family: var(--fontPop);
     font-weight: bold;
     font-size: 12px;
@@ -147,6 +148,19 @@
 .game-heading{
     font-family: var(--fontPop);
     color: #1904f6;
+}
+.player-Two h2{
+    font-size: 12px;
+    margin-top: 10px;
+}
+.display{
+    margin-top: 50px;
+}
+.display .display-btn{
+    margin-bottom: 10px;
+}
+.main-Err, .playerOne-Err, .playerTwo-Err{
+    font-size: 12px;
 }
 
 }
