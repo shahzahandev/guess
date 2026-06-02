@@ -59,7 +59,7 @@ playerTwoBtn.addEventListener("click", () => {
      } else if (playerOneInput.value === playerTwoInput.value) {
           playerTwo.style.display = "none";
           display.style.display = "block";
-          displayHeading.innerHTML = 'Congratulation, Player Two is WIN.';
+          displayHeading.innerHTML = 'Congratulation, <br> Player Two is WIN.';
      } else {
           chanceNumber--
           chance.style.color = 'red';

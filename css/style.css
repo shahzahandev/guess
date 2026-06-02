@@ -241,19 +241,17 @@
 .display .heading{
     text-align: center;
     font-family: var(--fontPop);
-    font-size: 36px;
-    margin-bottom: 50px;
-    margin-left: 80px;
-    width: 500px;
-}
-.display .display-btn{
-    position: absolute;
-    left: 35%;
+    font-size: 24px;
+    margin-bottom: 40px;
+   
 }
 
+
 .playerOne-name{
-    text-transform: capitalize;
-    color: rgb(208, 5, 69);
+    text-transform: uppercase;
+    color: rgb(21, 244, 21);
+    font: 900;
+    font-size: 28px;
 }
 .main-Err{
     color: red;
