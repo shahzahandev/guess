@@ -17,21 +17,13 @@
     min-height: 100vh;
     padding: 20px;
 }
-.content-main,
-.player-One,
-.player-Two,
-.display{
-    width: 100%;
-    max-width: 800px;
-    padding: 30px;
-    margin-top: 30px;
-}
+
 
 .wrapper span{
     position: fixed;
     top: -120px;
-    height: 50px;
-    width: 50px;
+    width: clamp(20px, 4vw, 50px);
+    height: clamp(20px, 4vw, 50px);
     background: #029c24;
     animation: animate 8s linear infinite;
     z-index: -1;
@@ -56,8 +48,8 @@
 .wrapper span:nth-child(4){
     left: 30%;
     animation-delay: 5s;
-    width: 80px;
-    height: 80px;
+    width: clamp(30px, 6vw, 80px);
+    height: clamp(30px, 6vw, 80px);
     background: #befb46;
 }
 .wrapper span:nth-child(5){
@@ -109,11 +101,11 @@
     background: #ef09cc;
 }
 .game-heading{
-    font-size: 42px;
+    font-size: 68px;
     font-family: 'Times New Roman', Times, serif;
     color: #1904f6;
     font-weight: 900;
-    margin-bottom: -40px;
+    margin-bottom: 20px;
 }
 .banner{
     display: flex;
@@ -131,7 +123,7 @@
     text-transform: uppercase;
     letter-spacing: 12px;
     text-align: center;
-    line-height: 0.9s;
+    line-height: 0.9;
 }
 
 @keyframes animate{
@@ -148,13 +140,22 @@
     }
 }
 
+.content-main,
+.player-One,
+.player-Two,
+.display{
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin-top: 30px;
+}
 
 .content-main{
     text-align: center;
     margin-top: 50px;
     border-radius: 10px;
     position: relative;
-    z-index: 99999;
+    z-index: 10;
     background: rgba(133, 127, 142, 0.75);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -164,7 +165,7 @@
     background: rgba(242, 236, 236, 0.45);
     border-radius: 10px;
     display: none;
-    z-index: 99999;
+    z-index: 10;
     background: rgba(133, 127, 142, 0.75);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -174,10 +175,19 @@
     background: rgba(133, 127, 142, 0.75);
     border-radius: 10px;
     display: none;
-    z-index: 99999;
+    z-index: 10;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
+
+.input:focus{
+    outline: none;
+    border-color: #4609c7;
+    box-shadow: 0 0 8px rgba(70, 9, 199, .4);
+}
+.btn:active{
+    transform: scale(.97);
+}
  .heading{
     font-family: var(--fontPop);
     font-weight: 700;
@@ -222,13 +232,9 @@
 
     margin-bottom: 50px;
 }
-.btn:hover{
-    background: #1904f6;
-}
 
 .display{
     width: 95%;
-    max-width: 700px;
     padding: 30px 20px;
     display: none;
     position: relative;
@@ -236,54 +242,53 @@
 
 .display .heading{
     width: 100%;
-    font-size: clamp(22px,4vw,36px);
-}
-.display .heading{
     text-align: center;
     font-family: var(--fontPop);
     font-size: 24px;
-    margin-bottom: 40px;
-   
+    margin-bottom: 40px; 
 }
-
+.display-btn{
+   width: 100%;
+}
 
 .playerOne-name{
     text-transform: uppercase;
     color: rgb(21, 244, 21);
-    font: 900;
-    font-size: 28px;
+    font-weight: 900;
+    font-size: 55px;
 }
-.main-Err{
+.main-Err,
+.playerOne-Err,
+.playerTwo-Err{
     color: red;
     font-size: 20px;
     font-weight: 500;
     font-family: var(--fontPop);
-    margin-top: -40px;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
-.playerOne-Err{
-    color: red;
-    font-size: 20px;
-    font-weight: 500; 
-    font-family: var(--fontPop);
-    margin-top: -40px;
-    margin-bottom: 10px;
+
+
+
+@media (hover:hover){
+    .btn:hover{
+        background:#1904f6;
+    }
 }
-.playerTwo-Err{
-    color: red;
-    font-size: 20px;
-    font-weight: 500; 
-    font-family: var(--fontPop);
-    margin-top: -40px;
-    margin-bottom: 10px; 
-}
+
 
  @media (max-width:576px){
 
     .game-heading{
-        font-size: 28px;
-        margin-bottom: 0;
+        font-size: 36px;
+        margin-bottom: 0px;
+        font-weight: 900;
     }
+    .playerOne-name{
+        font-size: 24px;
+
+    }
+    
 
     .content-main,
     .player-One,
@@ -320,7 +325,6 @@
         font-size: 14px;
     }
 }
-
 
 
 @media (min-width:577px) and (max-width:768px){
