@@ -6,14 +6,27 @@
 :root{
     --fontPop: "Poppins", sans-serif;
 }
-body{
-    background: radial-gradient(circle, #4DFFBE, #3dafc6, #5af872 );
+
+
+ body{
+    background: radial-gradient(circle, #4DFFBE, #3dafc6, #5af872);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    padding: 20px;
 }
+.content-main,
+.player-One,
+.player-Two,
+.display{
+    width: 100%;
+    max-width: 800px;
+    padding: 30px;
+    margin-top: 30px;
+}
+
 .wrapper span{
     position: fixed;
     top: -120px;
@@ -79,7 +92,7 @@ body{
 .wrapper span:nth-child(10){
     left: 90%;
     animation-delay: 4s;
-    border: 5px #fa0606;
+    border: 5px solid #fa0606;
 }
 .wrapper span:nth-child(11){
     left: 70%;
@@ -120,25 +133,7 @@ body{
     text-align: center;
     line-height: 0.9s;
 }
-.btn button{
-    width: 150px;
-    height: 70px;
-    background: none;
-    color: #fff;
-    font-weight: 600;
-    font-size: 25px;
-    border: 3px solid black;
-    border-radius: 10px;
-    cursor: pointer;
-    margin-top: 50px;
-    text-align: center;
-    transition:  0.5s ease-in;
-}
-button:hover{
-    background: #fff;
-    color: black;
-    font-weight: 700;
-}
+
 @keyframes animate{
     0%{
         transform: translateY(0);
@@ -148,8 +143,7 @@ button:hover{
         opacity: 0.7;
     }
     100%{
-        transform: translateY(800px)
-        rotate(360deg);
+        transform: translateY(800px) rotate(360deg);
         opacity: 0;
     }
 }
@@ -161,7 +155,7 @@ button:hover{
     border-radius: 10px;
     position: relative;
     z-index: 99999;
-    background: rgba(240, 232, 238, 0.25);
+    background: rgba(133, 127, 142, 0.75);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .player-One{
@@ -171,87 +165,192 @@ button:hover{
     border-radius: 10px;
     display: none;
     z-index: 99999;
-    background: rgba(240, 232, 238, 0.25);
+    background: rgba(133, 127, 142, 0.75);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 .player-Two{
     text-align: center;
     margin-top: 50px;
-    background: rgba(242, 236, 236, 0.45);
+    background: rgba(133, 127, 142, 0.75);
     border-radius: 10px;
     display: none;
     z-index: 99999;
-    background: rgba(240, 232, 238, 0.25);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
-.heading{
+
+ .heading{
     font-family: var(--fontPop);
-    font-weight: bold;
-    font-size: 48px;
-    color: #000000;
-    line-height: auto;
-    letter-spacing: 0;
-    margin-top: 80px;
+    font-weight: 700;
+    font-size: clamp(24px, 5vw, 48px);
+    text-align: center;
+    margin-top: 30px;
 }
-.input{
+
+ .input{
+    width: 90%;
+    max-width: 600px;
+
     font-family: var(--fontPop);
-    font-weight: bold;
-    font-size: 20px;
-    color: #000000;
-    line-height: auto;
+    font-size: 18px;
+
+    padding: 18px 20px;
+
+    border-radius: 50px;
+    border: 1px solid rgb(211,205,205);
+
+    margin: 30px auto;
+    display: block;
+
     background: #ffffff80;
-    letter-spacing: 0;
-    padding: 25px 240px 25px 25px;
-    border-radius: 79px;
-    margin: 56px 266px 36px 266px;
-    border: 1px solid rgb(211, 205, 205);
 }
+
 .btn{
-    margin-bottom: 70px;
     font-family: var(--fontPop);
-    font-weight: bold;
-    font-size: 28px;
-    color: #ffffff;
-    line-height: auto;
-    letter-spacing: 0;
-    padding: 12px 87px;
-    border-radius: 53px;
-    background: #4609c7;
-    cursor: pointer;
-    transition: all .3s linear;
+    font-weight: 700;
+    font-size: 20px;
+
+    padding: 12px 40px;
+
+    border-radius: 50px;
     border: none;
-    margin-bottom: 100px;
+
+    background: #4609c7;
+    color: white;
+
+    cursor: pointer;
+    transition: .3s;
+
+    margin-bottom: 50px;
 }
 .btn:hover{
     background: #1904f6;
 }
+
 .display{
-    text-align: center;
-    margin-top: 50px;
-    border-radius: 10px;
-    padding: 20px 100px;
+    width: 95%;
+    max-width: 700px;
+    padding: 30px 20px;
     display: none;
-    z-index: 99999;
-    background: rgba(240, 232, 238, 0.25);
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    position: relative;
+}
+
+.display .heading{
+    width: 100%;
+    font-size: clamp(22px,4vw,36px);
 }
 .display .heading{
     text-align: center;
     font-family: var(--fontPop);
-    text-transform: capitalize;
     font-size: 36px;
     margin-bottom: 50px;
+    margin-left: 80px;
     width: 500px;
+}
+.display .display-btn{
+    position: absolute;
+    left: 35%;
 }
 
 .playerOne-name{
     text-transform: capitalize;
     color: rgb(208, 5, 69);
 }
-.main-Err, .playerOne-Err, .playerTwo-Err{
-    margin-top: -80px;
-    margin-bottom: 20px;
+.main-Err{
     color: red;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
+    font-family: var(--fontPop);
+    margin-top: -40px;
+    margin-bottom: 10px;
+}
+.playerOne-Err{
+    color: red;
+    font-size: 20px;
+    font-weight: 500; 
+    font-family: var(--fontPop);
+    margin-top: -40px;
+    margin-bottom: 10px;
+}
+.playerTwo-Err{
+    color: red;
+    font-size: 20px;
+    font-weight: 500; 
+    font-family: var(--fontPop);
+    margin-top: -40px;
+    margin-bottom: 10px; 
+}
+
+ @media (max-width:576px){
+
+    .game-heading{
+        font-size: 28px;
+        margin-bottom: 0;
+    }
+
+    .content-main,
+    .player-One,
+    .player-Two,
+    .display{
+        width: 95%;
+        padding: 20px 15px;
+    }
+
+    .heading{
+        font-size: 24px;
+    }
+
+    .input{
+        width: 100%;
+        font-size: 14px;
+        padding: 14px 18px;
+    }
+
+    .btn{
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .player-Two h2{
+        font-size: 16px;
+    }
+
+    .main-Err,
+    .playerOne-Err,
+    .playerTwo-Err{
+        margin-top: -10px;
+        font-size: 14px;
+    }
+}
+
+
+
+@media (min-width:577px) and (max-width:768px){
+
+    .heading{
+        font-size: 32px;
+    }
+
+    .input{
+        width: 90%;
+    }
+
+    .btn{
+        font-size: 18px;
+    }
+}
+
+
+@media (min-width:769px) and (max-width:1024px){
+
+    .heading{
+        font-size: 40px;
+    }
+
+    .content-main,
+    .player-One,
+    .player-Two,
+    .display{
+        max-width: 700px;
+    }
 }
